@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app = "friendsList"> <!--  ng-app creates the app and binds the angular to the HTML -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>First Angular Project</title>
+</head>
+<body ng-controller="mainCtrl">
+
+    <h1>My Friends</h1>
+    <input ng-model="newFriends" type="text" placeholder="Search Name">
+    <br>
+    <button class="main-button" ng-click="addFriend"></button>
+
+    <div ng-repeat="friend in friends| filter: newFriends">
+        <p>{{friend}}</p>
+    </div>
+
+
+
+
+
+<!--Angular CDN-->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/controller.js"></script>
+</body>
+</html>
